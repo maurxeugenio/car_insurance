@@ -268,5 +268,3 @@ docker compose run --rm test pytest --cov=src --cov-report=term-missing
 **Why value objects are frozen dataclasses?** Immutability prevents accidental mutation of domain concepts. A `Rate` of `0.10` should never silently become `0.12` mid-calculation.
 
 **Why `IGISPort` lives in the domain?** The domain defines *what* it needs (a rate adjustment based on location), not *how* it gets it. The infrastructure adapter implements the port, keeping the domain free of HTTP concerns.
-
-**Why no `lru_cache` on `get_settings()`?** In development, settings are re-read on every request so changes to `.env` are reflected immediately without restarting the container.
