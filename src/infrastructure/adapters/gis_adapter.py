@@ -3,8 +3,7 @@ import hashlib
 import httpx
 
 from src.domain.ports.gis_port import IGISPort
-from src.domain.value_objects.address import Address
-from src.domain.value_objects.rate import Rate
+from src.domain.value_objects import Address, Rate
 
 _NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 _USER_AGENT = "car-insurance-simulator/0.1.0"

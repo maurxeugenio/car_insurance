@@ -1,7 +1,7 @@
 import datetime
 
-from src.domain.value_objects.car_details import CarDetails
-from src.domain.value_objects.rate import Rate
+from src.domain.value_objects import CarDetails, Rate
+
 
 class RateCalculationService:
     """
