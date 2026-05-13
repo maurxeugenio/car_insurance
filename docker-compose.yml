@@ -1,0 +1,25 @@
+services:
+ 
+  api:
+    build: .
+    container_name: car_insurance_api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./.env:/app/.env
+ 
+  test:
+    build: .
+    container_name: car_insurance_test
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./.env:/app/.env
+    command: pytest tests/ -v --tb=short --cov=src --cov-report=term-missing
+ 
