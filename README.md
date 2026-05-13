@@ -75,8 +75,6 @@ car_insurance/
 │   ├── application/
 │   │   ├── commands/
 │   │   │   └── quote_command.py
-│   │   ├── handlers/
-│   │   │   └── quote_command_handler.py
 │   │   └── use_cases/
 │   │       └── calculate_premium.py
 │   ├── domain/
