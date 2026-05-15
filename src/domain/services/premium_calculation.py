@@ -26,5 +26,3 @@ class PremiumCalculationService:
         base_premium = Money(amount=car.value * rate.value)
         deductible_discount = base_premium * deductible_percentage.value
         return base_premium - deductible_discount + broker_fee
-
-        

@@ -19,10 +19,10 @@ class Money:
     def __sub__(self, other: "Money") -> "Money":
         self._assert_same_currency(other)
         return Money(amount=self.amount - other.amount, currency=self.currency)
-    
+
     def __mul__(self, factor: float) -> "Money":
         return Money(amount=self.amount * factor, currency=self.currency)
-    
+
     def _assert_same_currency(self, other: "Money") -> None:
         if self.currency != other.currency:
             raise ValueError(

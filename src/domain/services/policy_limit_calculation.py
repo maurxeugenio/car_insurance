@@ -13,9 +13,8 @@ class PolicyLimitCalculationService:
     def __init__(self, coverage_percentage: float = 1.0) -> None:
         if not (0 < coverage_percentage <= 1):
             raise ValueError("coverage_percentage must be between 0 (exclusive) and 1")
-        
+
         self._coverage_percentage = coverage_percentage
-    
 
     def calculate_limit(
         self,
@@ -25,7 +24,7 @@ class PolicyLimitCalculationService:
         base = Money(amount=car.value * self._coverage_percentage)
         deductible = base * deductible_percentage.value
         return base - deductible
-    
+
     def calculate_deductible_value(
         self,
         car: CarDetails,

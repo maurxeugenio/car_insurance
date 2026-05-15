@@ -7,12 +7,12 @@ class Address:
     country: str
     state: str
 
-    def __post_init(self) -> None:
+    def __post_init__(self) -> None:
         if not self.city:
             raise ValueError("city must not be empty")
-        
+
         if not self.country:
             raise ValueError("country must not be empty")
-        
+
         if not self.state:
             raise ValueError("state must not be empty")

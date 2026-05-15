@@ -35,8 +35,6 @@ class GISAdapter(IGISPort):
 
         return rate.adjusted(adjustment)
 
-    # ── OpenStreetMap Nominatim ───────────────────────────────────────────────
-
     async def _fetch_osm_adjustment(self, address: Address) -> float:
         try:
             async with httpx.AsyncClient() as client:
@@ -79,8 +77,6 @@ class GISAdapter(IGISPort):
         normalized = (blended * 2) - 1
         return round(normalized * self._max_adjustment, 6)
 
-    # ── Proprietary GIS (optional) ────────────────────────────────────────────
-
     async def _fetch_proprietary(self, address: Address) -> float:
         """
         Calls a proprietary GIS API.
@@ -103,8 +99,6 @@ class GISAdapter(IGISPort):
 
         except Exception:
             return self._hash_fallback(address)
-
-    # ── Hash fallback ─────────────────────────────────────────────────────────
 
     def _hash_fallback(self, address: Address) -> float:
         """Deterministic risk score — no network required."""

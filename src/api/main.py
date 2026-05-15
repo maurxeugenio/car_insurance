@@ -29,7 +29,7 @@ def create_app() -> FastAPI:
         return JSONResponse({
             "status": "It's ok and aqui é galo!"
         })
-    
+
     return app
 
 
